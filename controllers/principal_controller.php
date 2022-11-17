@@ -12,10 +12,9 @@ class principal_controller {
         $_SESSION["usuario"]=seg::decodificar($_COOKIE["usuario"]); // se almacena y se decodifica el usuario
         $_SESSION["nombre"]=seg::decodificar($_COOKIE["nombre"]); // se almacena y se decodifica el nombre
     }
-        $titulo_paginaprincipal = "Pagina Principal";
         require_once("views/templates/header.php");
         require_once("views/templates/navbar.php");
-        require_once("views/principal/index.php");
+        require_once("views/usuarios/login.php");
         require_once("views/templates/footer.php");
         
     }

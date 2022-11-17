@@ -5,6 +5,7 @@
         private $password;
         private $salt;
         private $nombre;
+        
         public function __construct($usuario, $password, $salt, $nombre)
         {
             $this->usuario = $usuario;
@@ -29,15 +30,6 @@
         }
 
             //aqui se crean los metodos insertar, delete, etc.. de la tabla de usuarios
-
-
-
     }
 
 ?>
-
-
-
-
-
-

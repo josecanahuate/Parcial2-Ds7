@@ -25,8 +25,8 @@ requerido por llenar, no borre el campo correo sino que lo manntendra hasta llen
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" name="txtcomentario_contacto" value="<?php echo isset($comentario)?$comentario:"" ?>" rows="3"></textarea>
-                 <!--esta linea texthelp $error hace referencia a la validacion del campo por llenar y en la posicion comentario -> [2] que se encuentra el campo requerido-->
-                 <div id="textHelp" style="color:#FF0000" class="form-text"><?php echo isset($error[2])?$error[2]:"" ?> </div>
+                <!--esta linea texthelp $error hace referencia a la validacion del campo por llenar y en la posicion comentario -> [2] que se encuentra el campo requerido-->
+                <div id="textHelp" style="color:#FF0000" class="form-text"><?php echo isset($error[2])?$error[2]:"" ?> </div>
                 </div>
 
                 <!-- CREACION DE UN CAMPO OCULTO -->

@@ -25,7 +25,4 @@ PANTALLA MOSTRAR SE USA PARA ALGO MAS -->
         </div>
 
     </div>
-
-
-
 </div>

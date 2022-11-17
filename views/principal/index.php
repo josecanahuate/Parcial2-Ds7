@@ -1,2 +1,2 @@
 
-    <h1>Pagina Principal</h1>
+<!--include 'views/productos/crear_productos.php' -->

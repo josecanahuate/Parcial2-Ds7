@@ -1,45 +1,78 @@
-
+<!--<body style="background-color: #508bfc;"> -->
 <div class="container">
-    
     <div class="row">
-        <p></p>
-        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
-            <?php if ($msg != ""){ ?>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Error:</strong> <?php echo $msg ?>.
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                <?php } ?>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <section class="vh-100">
+<div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+    <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+        class="img-fluid" alt="Phone image">
+    </div>
+    <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
 
-        <form action="<?php echo "index.php?c=".seg::codificar("usuarios")."&m=".seg::codificar("validar")?>  " method="post">
-        <div class="mb-3">
-            <p></p>
-            <label for="exampleInputText1" class="form-label">Usuario</label>
-            <input type="text" class="form-control" id="exampleInputText1" name="txtusuario" aria-describedby="textHelp">
-            <div id="textHelp" class="form-text"> </div>
+    <?php
+
+if (isset($_GET["msg"])) {
+    $msg = 1;
+} else {
+    $msg = 2;
+}
+if ($msg == 1) { ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>ERROR Usuario o Password incorrectos!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php } ?> 
+
+    <form action="<?php echo "index.php?c=".seg::codificar("usuarios")."&m=".seg::codificar("validar")?>  " method="post">
+    <h1 style="text-align:center">Login</h1>
+    <p></p>
+    <!-- User input -->
+        <div class="form-outline mb-4">
+            <label class="form-label" for="form1Example13">Usuario</label>
+            <input type="text" id="form1Example13" class="form-control form-control-lg" name="txtusuario" placeholder="Escriba su Usuario" aria-describedby="textHelp"/>
         </div>
 
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="txtpassword" aria-describedby="passwordHelp">
-            <div id="passwordHelp" class="form-text"> </div>
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+        <label class="form-label" for="form1Example23">Contraseña</label>
+            <input type="password" id="form1Example23" name="txtpassword" aria-describedby="passwordHelp" class="form-control form-control-lg" placeholder="Escriba su Contraseña"/>
         </div>
 
-        <!-- CHECKBOX RECORDAR -->
-        <div class="form-check">
-            <input class="form-check-input" name="chkrecordar" type="checkbox" value="1" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Recordar Datos
-            </label>
+        <div class="d-flex justify-content align-items-center mb-5">
+            <!-- CHECKBOX RECORDAR -->
+            <div class="form-check">
+            <input class="form-check-input" name="chkrecordar" type="checkbox" value="1" id="form1Example3" />
+            <label class="form-check-label" for="form1Example3"> Recordarme </label>
+            </div>
         </div>
-        <p></p>
+
+        <!-- Submit button -->
+        <div style="text-align: center;">
         <!-- EN TODOS LOS FORMULARIOS SE DEBE AGREGAR EL TOKEN-->
         <input type="hidden" value="<?php echo seg::getToken()?>" name="token">
-        <button type="submit" class="btn btn-success">Entrar</button>
+        <button type="submit" class="btn btn-success btn-lg btn-block">Entrar</button>
+        </div>
         </form>
+</div>
+    </div>
+</div>
+</section>
 
         </div>
         
     </div>
     
 </div>
+<!--</body> -->
+
+<style>
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+</style>
